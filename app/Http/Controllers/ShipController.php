@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ShipRequest;
+use App\Http\Requests\UpdateShipRequest;
 use App\Models\Ship;
 use Illuminate\Support\Facades\Storage;
 
@@ -59,10 +60,10 @@ class ShipController extends Controller
         return $ship->delete();
     }
 
-    public function update(ShipRequest $request, Ship $ship)
+    public function update(UpdateShipRequest $request, Ship $ship)
     {
         $shipData = $request->validated();
-        $photo = $shipData['photo'];
+        $photo = $request->photo;
         if($photo) {
             Storage::delete($ship->photo);
             $filename =  time().'_ship_photo.'.$photo->extension();
@@ -70,7 +71,7 @@ class ShipController extends Controller
             $shipData['photo'] = $filename;
         }
 
-        $doc = $shipData['licence_doc'];
+        $doc = $request->licence_doc;
         if ($doc) {
             Storage::delete($ship->licence_doc);
             $filename =  time().'_ship_licence_doc.'.$doc->extension();
@@ -78,8 +79,8 @@ class ShipController extends Controller
             $shipData['licence_doc'] = $filename;
         }
 
-        return $ship->update($shipData);
-
+        $ship->update($shipData);
+        return $ship;
     }
 
 }

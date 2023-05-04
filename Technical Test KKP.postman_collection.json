@@ -225,16 +225,16 @@
 								{
 									"key": "photo",
 									"type": "file",
-									"src": "/C:/Users/kadek/OneDrive/Desktop/sadaDASKDJALDJHdhksjhfdkjh.txt"
+									"src": "/C:/Users/kadek/OneDrive/Pictures/Screenshots/Screenshot 2023-03-09 145458.png"
 								},
 								{
 									"key": "licence_doc",
 									"type": "file",
-									"src": "/C:/Users/kadek/OneDrive/Dokumen/window licensi.txt"
+									"src": "/C:/Users/kadek/OneDrive/Desktop/sadaDASKDJALDJHdhksjhfdkjh.txt"
 								},
 								{
 									"key": "code",
-									"value": "SP01",
+									"value": "SP02",
 									"type": "text"
 								},
 								{
@@ -304,69 +304,23 @@
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "photo",
-									"type": "file",
-									"src": "/C:/Users/kadek/OneDrive/Desktop/sadaDASKDJALDJHdhksjhfdkjh.txt"
-								},
-								{
-									"key": "licence_doc",
-									"type": "file",
-									"src": "/C:/Users/kadek/OneDrive/Dokumen/window licensi.txt"
-								},
-								{
-									"key": "code",
-									"value": "SP01",
-									"type": "text"
-								},
-								{
-									"key": "name",
-									"value": "Kapal Ikan",
-									"type": "text"
-								},
-								{
-									"key": "owner_name",
-									"value": "Kowo",
-									"type": "text"
-								},
-								{
-									"key": "owner_address",
-									"value": "Bali",
-									"type": "text"
-								},
-								{
-									"key": "ship_size",
-									"value": "200",
-									"type": "text"
-								},
-								{
-									"key": "captain_name",
-									"value": "Nowo",
-									"type": "text"
-								},
-								{
-									"key": "member_size",
-									"value": "2000",
-									"type": "text"
-								},
-								{
-									"key": "licence_number",
-									"value": "32874392847",
-									"type": "text"
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"SP02\",\r\n    \"name\": \"Kapal Ikan 2\",\r\n    \"owner_name\": \"Kowo\",\r\n    \"owner_address\": \"Denpasar\",\r\n    \"ship_size\": \"200\",\r\n    \"captain_name\": \"kowok\",\r\n    \"member_size\": \"20000\",\r\n    \"licence_number\": \"2305982304583094\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/ships/1",
+							"raw": "{{baseUrl}}/api/ships/4",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
 								"ships",
-								"1"
+								"4"
 							]
 						}
 					},

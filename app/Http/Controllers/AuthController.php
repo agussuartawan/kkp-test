@@ -19,11 +19,12 @@ class AuthController extends Controller
 
         $user = User::where('email', $credentials['email'])->first();
 
-        if (!$user->email_verified_at || !$user->is_approved) abort(401);
 
         if (! $token = auth()->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
+
+        if (!$user->email_verified_at || !$user->is_approved) abort(401);
 
         return $this->respondWithToken($token);
     }
